@@ -21,7 +21,16 @@ const icons = {
 // DİL SÖZLÜĞÜ (Tüm yazıları buradan değiştirebilirsin)
 const translations = {
   tr: {
-   nav: { about: "Hakkımda", education: "Eğitim", skills: "Yetenekler", projects: "Projeler", certs: "Sertifikalar", contact: "İletişim", toggle: "EN" },
+  nav: {
+  about: "Hakkımda",
+  education: "Eğitim",
+  skills: "Yetenekler",
+  projects: "Projeler",
+  security: "Güvenlik",
+  certs: "Sertifikalar",
+  contact: "İletişim",
+  toggle: "EN"
+},
     hero: { greeting: "Merhaba, Ben", name: "Hasan Can Karadağ", role: "Büyük Veri Analistliği Öğrencisi | Veri Analizi & Veri Bilimi" },
     about: {
       title: "Hakkımda",
@@ -62,6 +71,23 @@ const translations = {
         }
       ]
     },
+    security: {
+  title: "Güvenlik ve Altyapı",
+  project: "Bağ Karar Panosu",
+  desc: "Bağ Karar Panosu projesinde Cloudflare Pages ve Cloudflare Workers kullanarak güvenli bir bulut altyapısı oluşturdum. API proxy katmanında rate limiting, cache ve koordinat allowlist kontrolleri uyguladım.",
+  items: [
+    "IP başına 30 istek / 60 saniye rate limiting",
+    "30 dakikalık cache",
+    "Saruhanlı, Alaşehir ve Sarıgöl koordinat allowlist'i",
+    "CSP, HSTS ve diğer HTTP güvenlik başlıkları",
+    "Cloudflare Workers loglama ve 5xx hata alarmı",
+    "GitHub Secret Protection ve Push Protection",
+    "OWASP ZAP güvenlik taraması",
+    "SecurityHeaders ve MDN Observatory A+ sonucu"
+  ],
+  live: "Canlı Uygulama",
+  github: "GitHub Deposu"
+},
     certs: { title: "Sertifikalar", featured: "Öne Çıkanlar", all: "Tüm Sertifikalar", verify: "Doğrula", score: "Puan", empty: "Henüz sertifika eklenmedi." },
     contact: {
       title: "Benimle İletişime Geç",
@@ -71,7 +97,16 @@ const translations = {
     }
   },
   en: {
-   nav: { about: "About", education: "Education", skills: "Skills", projects: "Projects", certs: "Certificates", contact: "Contact", toggle: "TR" },
+   nav: {
+  about: "About",
+  education: "Education",
+  skills: "Skills",
+  projects: "Projects",
+  security: "Security",
+  certs: "Certificates",
+  contact: "Contact",
+  toggle: "TR"
+},
     hero: { greeting: "Hello, I'm", name: "Hasan Can Karadağ", role: "Big Data Analytics Student | Data Analysis & Data Science" },
     about: {
       title: "About Me",
@@ -112,6 +147,23 @@ const translations = {
         }
       ]
     },
+    security: {
+  title: "Security & Infrastructure",
+  project: "Bağ Karar Panosu",
+  desc: "For the Bağ Karar Panosu project, I built a secure cloud infrastructure using Cloudflare Pages and Cloudflare Workers. I implemented rate limiting, caching and coordinate allowlisting at the API proxy layer.",
+  items: [
+    "30 requests / 60 seconds per IP rate limiting",
+    "30-minute caching",
+    "Coordinate allowlist for Saruhanlı, Alaşehir and Sarıgöl",
+    "CSP, HSTS and other HTTP security headers",
+    "Cloudflare Workers logging and 5xx error monitoring",
+    "GitHub Secret Protection and Push Protection",
+    "OWASP ZAP security scanning",
+    "A+ results from SecurityHeaders and MDN Observatory"
+  ],
+  live: "Live Application",
+  github: "GitHub Repository"
+},
     certs: { title: "Certificates", featured: "Featured", all: "All Certificates", verify: "Verify", score: "Score", empty: "No certificates yet." },
     contact: {
       title: "Contact Me",
@@ -233,6 +285,12 @@ export default function AnaSayfa({ sertifikalar = [], onecikanlar = [] }) {
                 <a href="#egitim" className="hover:text-cyan-300 transition-colors drop-shadow-sm">{t.nav.education}</a>
                 <a href="#yetenekler" className="hover:text-cyan-300 transition-colors drop-shadow-sm">{t.nav.skills}</a>
                 <a href="#projeler" className="hover:text-cyan-300 transition-colors drop-shadow-sm">{t.nav.projects}</a>
+                <a
+  href="#guvenlik"
+  className="hover:text-cyan-300 transition-colors drop-shadow-sm"
+>
+  {t.nav.security}
+</a>
                 <a href="#sertifikalar" className="hover:text-cyan-300 transition-colors drop-shadow-sm">{t.nav.certs}</a>
                 <a href="#iletisim" className="hover:text-cyan-300 transition-colors drop-shadow-sm">{t.nav.contact}</a>
               </div>
@@ -370,6 +428,72 @@ export default function AnaSayfa({ sertifikalar = [], onecikanlar = [] }) {
           </div>
         </section>
 
+
+{/* 6. Güvenlik ve Altyapı */}
+<section id="guvenlik" className="max-w-4xl mx-auto px-6 py-20">
+  <div className="flex items-center gap-4 mb-10 border-b border-cyan-200/30 pb-4">
+    <svg
+      className="w-7 h-7 text-cyan-100"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z"
+      />
+    </svg>
+
+    <h2 className="text-3xl font-bold text-white drop-shadow-sm">
+      {t.security.title}
+    </h2>
+  </div>
+
+  <div className="bg-black/40 backdrop-blur-md border border-cyan-200/30 p-8 rounded-2xl shadow-xl hover:border-cyan-400/50 transition-colors duration-300">
+    <h3 className="text-2xl font-bold text-white mb-4">
+      {t.security.project}
+    </h3>
+
+    <p className="text-cyan-50 leading-relaxed mb-8">
+      {t.security.desc}
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+      {t.security.items.map((item, index) => (
+        <div
+          key={index}
+          className="flex items-start gap-3 bg-black/40 border border-cyan-800/50 p-4 rounded-xl"
+        >
+          <span className="text-cyan-300 font-bold">✓</span>
+          <span className="text-cyan-50 text-sm">{item}</span>
+        </div>
+      ))}
+    </div>
+
+    <div className="flex flex-wrap gap-4">
+      <a
+        href="https://bag-karar-panosu.pages.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center px-5 py-3 bg-cyan-900/60 hover:bg-cyan-800 border border-cyan-500/50 text-white font-semibold rounded-xl transition-all duration-300"
+      >
+        {t.security.live}
+      </a>
+
+      <a
+        href="https://github.com/hsnckrdg/bag-karar-panosu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center px-5 py-3 bg-black/50 hover:bg-black/80 border border-cyan-500/30 hover:border-cyan-300 text-white font-semibold rounded-xl transition-all duration-300"
+      >
+        {t.security.github}
+      </a>
+    </div>
+  </div>
+</section>
+
         {/* Sertifikalar */}
 <section id="sertifikalar" className="max-w-4xl mx-auto px-6 py-20">
   <div className="flex items-center gap-4 mb-10 border-b border-cyan-200/30 pb-4">
@@ -403,7 +527,7 @@ export default function AnaSayfa({ sertifikalar = [], onecikanlar = [] }) {
           <p className="text-cyan-50 mb-10 text-lg drop-shadow-sm max-w-xl mx-auto">{t.contact.desc}</p>
 
           <div className="flex flex-wrap justify-center items-center gap-6">
-            <a href="https://github.com/hsnckrdg-ai" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-black/50 backdrop-blur-md border border-cyan-500/30 py-3.5 px-8 rounded-full hover:bg-black/80 hover:border-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:-translate-y-1 transition-all duration-300">
+            <a href="https://github.com/hsnckrdg" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-black/50 backdrop-blur-md border border-cyan-500/30 py-3.5 px-8 rounded-full hover:bg-black/80 hover:border-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:-translate-y-1 transition-all duration-300">
               <svg className="w-6 h-6 text-white group-hover:text-cyan-300 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               <span className="font-semibold text-white group-hover:text-cyan-50">GitHub</span>
             </a>
