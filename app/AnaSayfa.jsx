@@ -69,6 +69,14 @@ const translations = {
           img: "https://picsum.photos/id/845/600/400",
           link: "https://hsnckrdg-data-salaries.vercel.app/"
         }
+        ,
+{
+  title: "Bağ Karar Panosu",
+  desc: "Manisa'daki üzüm üreticileri için hava durumu, GDD ve tarımsal riskleri tek ekranda sunan karar destek uygulaması.",
+  tags: ["JavaScript", "Chart.js", "Cloudflare"],
+  img: "https://picsum.photos/id/846/600/400",
+  link: "/bag-karar-panosu"
+}
       ]
     },
     security: {
@@ -145,6 +153,14 @@ const translations = {
           img: "https://picsum.photos/id/845/600/400",
           link: "https://hsnckrdg-data-salaries.vercel.app/"
         }
+        ,
+{
+  title: "Vineyard Decision Dashboard",
+  desc: "A decision-support dashboard combining weather, GDD and agricultural risk information for grape producers in Manisa.",
+  tags: ["JavaScript", "Chart.js", "Cloudflare"],
+  img: "https://picsum.photos/id/846/600/400",
+  link: "/bag-karar-panosu"
+}
       ]
     },
     security: {
