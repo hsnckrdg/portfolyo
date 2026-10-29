@@ -77,6 +77,14 @@ const translations = {
   img: "https://picsum.photos/id/846/600/400",
   link: "/bag-karar-panosu"
 }
+,
+{
+  title: "Manisa Kent Merkezi Sokak Ağı",
+  desc: "Şehzadeler ve Yunusemre yol ağında merkeziyet, topluluk yapısı, ticari POI yoğunluğu ve kritik yol kesintilerini inceleyen etkileşimli ağ analizi.",
+  tags: ["Python", "NetworkX", "OSMnx", "Leiden"],
+  img: "https://picsum.photos/id/847/600/400",
+  link: "/manisa-ag"
+}
       ]
     },
     security: {
@@ -160,6 +168,14 @@ const translations = {
   tags: ["JavaScript", "Chart.js", "Cloudflare"],
   img: "https://picsum.photos/id/846/600/400",
   link: "/bag-karar-panosu"
+}
+,
+{
+  title: "Manisa Urban Street Network",
+  desc: "An interactive network analysis of the Şehzadeler and Yunusemre road network, including centrality, community structure, commercial POI density and critical road disruption scenarios.",
+  tags: ["Python", "NetworkX", "OSMnx", "Leiden"],
+  img: "https://picsum.photos/id/847/600/400",
+  link: "/manisa-ag"
 }
       ]
     },
